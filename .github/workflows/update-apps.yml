@@ -42,6 +42,6 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update ctag-tb apps
+          commit_message: Update ctag-tbd apps
           file_pattern: _config.yml
           status_options: '--untracked-files=no'
