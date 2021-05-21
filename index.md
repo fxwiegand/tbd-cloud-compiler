@@ -7,7 +7,7 @@
 <form>
     <div class="row">
     {% for app in site.apps %}
-    <div class="col-4">
+    <div class="col-4 mt-1">
         <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" id="checkbox-{{ app }}">
           <label class="form-check-label" for="checkbox-{{ app }}">{{ app }}</label>
@@ -15,7 +15,7 @@
     </div>
     {% endfor %}
     </div>
-    <label for="basic-url" class="form-label mt-1">Your ctag-tbd fork</label>
+    <label for="basic-url" class="form-label mt-2">Your ctag-tbd fork</label>
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon3">https://github.com/</span>
         <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="cnorris/ctag-tbd">
