@@ -33,5 +33,6 @@
         <input type="text" class="form-control" id="oauth-token" aria-describedby="oauth-help">
         <div id="oauth-help" class="form-text">This token will be needed to trigger the GitHub Action in your fork to build the firmware.</div>
     </div>
+    <button type="submit" class="btn btn-primary">Compile Firmware</button>
 </form>
 
