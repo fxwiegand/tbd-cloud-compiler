@@ -35,11 +35,11 @@ jobs:
           path: 'ctag-tbd'
 
       # List workspace
-      - name: Run a one-line script
+      - name: Update apps from ctag-tbd repository
         id : manipulate_yaml
         run: |
           python update-apps.py
-          OUTPUT=$( git status )
+          OUTPUT=$( git status | grep -p modified )
           echo "::set-output name=OUTPUT::$OUTPUT"
 
       - name: Add changes and commit
