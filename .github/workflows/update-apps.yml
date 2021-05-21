@@ -39,7 +39,7 @@ jobs:
         id : manipulate_yaml
         run: |
           python update-apps.py
-          OUTPUT=$( git status | grep -q modified )
+          OUTPUT=$( git status )
           echo "::set-output name=OUTPUT::$OUTPUT"
 
       - name: Add changes and commit
