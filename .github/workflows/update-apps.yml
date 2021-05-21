@@ -42,16 +42,8 @@ jobs:
           OUTPUT=$( git status | grep -c "modified" )
           echo "::set-output name=OUTPUT::$OUTPUT"
 
-      - name: Add changes and commit
-        if: steps.manipulate_yaml.outputs.OUTPUT == 0
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add _config.yml
-          git status
-          git commit -m 'Update ctag-tbd apps'
-
-      - if: ${{ github.ref == 'refs/heads/gh-pages' }}
-        name: Push changes
-        run: |
-          git push
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update ctag-tb apps
+          file_pattern: _config.yml
+          status_options: '--untracked-files=no'
