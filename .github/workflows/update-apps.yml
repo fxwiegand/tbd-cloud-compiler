@@ -29,6 +29,7 @@ jobs:
       - name: Checkout ctag-tbd repository
         uses: actions/checkout@v2
         with:
+          repository: 'https://github.com/ctag-fh-kiel/ctag-tbd'
           path: 'ctag-tbd'
 
       # List workspace
