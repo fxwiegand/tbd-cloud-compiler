@@ -36,7 +36,7 @@ jobs:
 
       # List workspace
       - name: Run a one-line script
-        id :manipulate_yaml
+        id : manipulate_yaml
         run: |
           python update-apps.py
           OUTPUT=$( git status | grep -q modified )
