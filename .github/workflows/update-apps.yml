@@ -39,8 +39,6 @@ jobs:
         id : manipulate_yaml
         run: |
           python update-apps.py
-          OUTPUT=$( git status | grep -c "modified" )
-          echo "::set-output name=OUTPUT::$OUTPUT"
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
