@@ -34,10 +34,10 @@ jobs:
 
       # List workspace
       - name: Run a one-line script
-        run: ls -al
+        run: python update-apps.py
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          cd ctag-tbd
-          ls -al
+          cat _config.yml
+          echo "Did it work?"
