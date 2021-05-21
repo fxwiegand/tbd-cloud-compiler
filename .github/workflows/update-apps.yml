@@ -5,6 +5,8 @@ name: CI
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the gh-pages branch
+  schedule:
+    - cron: '0 8,16 * * *'
   push:
     branches: [ gh-pages ]
   pull_request:
@@ -36,8 +38,15 @@ jobs:
       - name: Run a one-line script
         run: python update-apps.py
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Add changes and commit
         run: |
-          cat _config.yml
-          echo "Did it work?"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add _config.yml
+          git status
+          git commit -m 'Update ctag-tbd apps, ${{ steps.fetch.outputs.time }}'
+
+      - if: ${{ github.ref == 'refs/heads/gh-pages' }}
+        name: Push changes
+        run: |
+          git push
