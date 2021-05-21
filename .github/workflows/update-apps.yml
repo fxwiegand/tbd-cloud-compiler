@@ -36,13 +36,17 @@ jobs:
 
       # List workspace
       - name: Run a one-line script
-        run: python update-apps.py
+        id :manipulate_yaml
+        run: |
+          python update-apps.py
+          OUTPUT=$( git status | grep -q modified )
+          echo "::set-output name=OUTPUT::$OUTPUT"
 
       - name: Add changes and commit
+        if: steps.manipulate_yaml.outputs.OUTPUT == 0
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          if [ git status | grep -q modified ]; then echo 'Not Equal'; else echo 'Equal'; fi
           git add _config.yml
           git status
           git commit -m 'Update ctag-tbd apps'
