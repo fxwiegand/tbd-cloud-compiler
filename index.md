@@ -2,7 +2,7 @@
 
 <p>You can compile custom firmware for your ctag-tbd that only contains the apps you need in order to have more room for samples on your module.</p>
 
-<p>{{ site.description | default: site.github.project_tagline }}</p>
+<p>{{ site.apps }}</p>
 
 <h1>Apps</h1>
 
