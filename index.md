@@ -7,7 +7,7 @@
 <form>
     <div class="row">
     {% for app in site.apps %}
-    <div class="col-3 mt-1">
+    <div class="col-4 mt-1">
         <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" id="checkbox-{{ app }}">
           <label class="form-check-label" for="checkbox-{{ app }}">{{ app }}</label>
