@@ -2,27 +2,15 @@
 
 <p>You can compile custom firmware for your ctag-tbd that only contains the apps you need in order to have more room for samples on your module.</p>
 
-<p>{% for app in site.apps %}{{ app }}{% endfor %}</p>
-
 <h1>Apps</h1>
 
 <form>
+    {% for app in site.apps %}
     <div class="form-check form-switch">
       <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-      <label class="form-check-label" for="flexSwitchCheckDefault">freeverb</label>
+      <label class="form-check-label" for="flexSwitchCheckDefault">{{ app }}</label>
     </div>
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-      <label class="form-check-label" for="flexSwitchCheckDefault">BBeats</label>
-    </div>
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-      <label class="form-check-label" for="flexSwitchCheckDefault">Dust</label>
-    </div>
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-      <label class="form-check-label" for="flexSwitchCheckDefault">EChorus</label>
-    </div>
+    {% endfor %}
     <label for="basic-url" class="form-label">Your ctag-tbd fork</label>
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon3">https://github.com/</span>
