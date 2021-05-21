@@ -15,8 +15,8 @@
     </div>
     {% endfor %}
     </div>
+    <label for="basic-url" class="form-label mt-1">Your ctag-tbd fork</label>
     <div class="input-group mb-3">
-        <label for="basic-url" class="form-label">Your ctag-tbd fork</label>
         <span class="input-group-text" id="basic-addon3">https://github.com/</span>
         <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="cnorris/ctag-tbd">
     </div>
