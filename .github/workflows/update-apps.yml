@@ -44,7 +44,7 @@ jobs:
           git config user.email github-actions@github.com
           git add _config.yml
           git status
-          git commit -m 'Update ctag-tbd apps, ${{ steps.fetch.outputs.time }}'
+          git commit -m 'Update ctag-tbd apps'
 
       - if: ${{ github.ref == 'refs/heads/gh-pages' }}
         name: Push changes
