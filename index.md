@@ -1,6 +1,10 @@
-<h1>Welcome to the ctag-cloud-compiler</h1>
+<h1>Welcome to the tbd-cloud-compiler</h1>
 
 <p>You can compile custom firmware for your ctag-tbd that only contains the apps you need in order to have more room for samples on your module.</p>
+
+<div class="alert alert-warning" role="alert">
+  Note that the tbd-cloud-compiler is still under construction and not fully tested! 
+</div>
 
 <h1>Apps</h1>
 
