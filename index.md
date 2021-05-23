@@ -53,7 +53,7 @@
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
         let body = {
             "ref": "main",
-            "inputs": {"tags": included_apps}
+            "inputs": {"tags": "somevalue"}
         };
 
         let auth = `token ${oauth_token}`;
