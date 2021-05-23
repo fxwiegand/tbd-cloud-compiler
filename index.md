@@ -29,8 +29,8 @@
         <input type="text" class="form-control" id="oauth-token" aria-describedby="oauth-help">
         <div id="oauth-help" class="form-text">This token will be needed to trigger the GitHub Action in your fork to build the firmware. Generating such a token is described in the <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub docs</a>.</div>
     </div>
-    <button onclick="trigger_workflow()" class="btn btn-primary">Compile Firmware</button>
 </form>
+<button onclick="trigger_workflow()" class="btn btn-primary">Compile Firmware</button>
 
 <script>
     const apps = [];
