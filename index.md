@@ -66,6 +66,18 @@
         let header = {
             "Authorization": auth,
         };
+        
+        let rqst = {
+            type: "POST",
+            url: url,
+            headers: header,
+            data: body,
+            success: function() {
+                console.log('success');
+            },
+        };
+
+        console.log(rqst);
 
         $.ajax({
             type: "POST",
