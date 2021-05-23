@@ -36,7 +36,7 @@
     function trigger_workflow() {
         let apps = [];
         $('.app-checkbox').each(function () {
-            console.log(this.id);
+            console.log(this.is(":checked"));
             apps.push(this.id);
         });
         let oauth_token = $('#oauth-token').val();
