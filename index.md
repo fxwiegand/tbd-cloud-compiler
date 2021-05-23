@@ -13,7 +13,7 @@
     {% for app in site.apps %}
     <div class="col-4 mt-1">
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="{{ app }}">
+          <input class="form-check-input app-checkbox" type="checkbox" id="{{ app }}">
           <label class="form-check-label" for="{{ app }}">{{ app }}</label>
         </div>
     </div>
@@ -33,8 +33,11 @@
 <button onclick="trigger_workflow()" class="btn btn-primary">Compile Firmware</button>
 
 <script>
-    const apps = [];
     function trigger_workflow() {
+        let apps = [];
+        $('.app-checkbox').each(function () {
+            apps.push(this.id);
+        });
         let oauth_token = $('#oauth-token').val();
         let user = $('#fork-url').val().split('/')[0];
         let repo = $('#fork-url').val().split('/')[1];
