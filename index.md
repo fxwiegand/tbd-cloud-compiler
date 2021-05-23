@@ -65,8 +65,8 @@
         $.ajax({
             type: "POST",
             url: url,
-            headers: header,
-            data: body,
+            headers: JSON.stringify(header),
+            data: JSON.stringify(body),
             success: function() {
                 console.log('success');
             },
