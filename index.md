@@ -39,9 +39,9 @@
         $('.app-checkbox').each(function () {
             let id = `#${this.id}`;
             if ($(id).is(":checked")) {
-                included_apps.push(app);
+                included_apps.push(this.id);
             } else {
-                removed_apps.push(app);
+                removed_apps.push(this.id);
             }
         });
         let oauth_token = $('#oauth-token').val();
