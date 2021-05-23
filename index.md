@@ -53,6 +53,29 @@
         console.log(repo);
         console.log(included_apps);
         console.log(removed_apps);
+        let workflow = "cpp.yml";
+
+        let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
+        let body = {
+            "ref": "main",
+            "inputs": {"tags": included_apps}
+        };
+
+        let auth = `token ${oauth_token}`;
+
+        let header = {
+            "Authorization": auth,
+        };
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            headers: header,
+            data: body,
+            success: function() {
+                console.log('success');
+            },
+        });
     }
     
 </script>
