@@ -48,11 +48,6 @@
         let user = $('#fork-url').val().split('/')[0];
         let repo = $('#fork-url').val().split('/')[1];
 
-        console.log(oauth_token);
-        console.log(user);
-        console.log(repo);
-        console.log(included_apps);
-        console.log(removed_apps);
         let workflow = "cpp.yml";
 
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
@@ -71,7 +66,7 @@
             type: "POST",
             url: url,
             headers: header,
-            data: JSON.stringify(body),
+            data: body,
             success: function() {
                 console.log('success');
             },
@@ -80,5 +75,4 @@
             }
         });
     }
-    
 </script>
