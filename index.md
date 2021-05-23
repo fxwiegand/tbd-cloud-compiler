@@ -33,7 +33,7 @@
 </form>
 
 <script>
-    const apps = [{% for app in site.apps %}"{{ app }}"{% if not loop.last %},{% endif %}{% endfor %}];
+    const apps = [];
     function trigger_workflow() {
         let oauth_token = $('#oauth-token').val();
         let user = $('#fork-url').val().split('/')[0];
