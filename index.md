@@ -56,6 +56,8 @@
             "inputs": {"tags": included_apps}
         };
 
+        console.log(body);
+
         let auth = `token ${oauth_token}`;
 
         let header = {
