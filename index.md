@@ -34,25 +34,19 @@
 
 <script>
     function trigger_workflow() {
-        let apps = [];
-        $('.app-checkbox').each(function () {
-            console.log(this.is(":checked"));
-            apps.push(this.id);
-        });
-        let oauth_token = $('#oauth-token').val();
-        let user = $('#fork-url').val().split('/')[0];
-        let repo = $('#fork-url').val().split('/')[1];
         let included_apps = [];
         let removed_apps = [];
-
-        for (let app of apps) {
-            let id = `#${app}`;
+        $('.app-checkbox').each(function () {
+            let id = `#${this.id}`;
             if ($(id).is(":checked")) {
                 included_apps.push(app);
             } else {
                 removed_apps.push(app);
             }
-        }
+        });
+        let oauth_token = $('#oauth-token').val();
+        let user = $('#fork-url').val().split('/')[0];
+        let repo = $('#fork-url').val().split('/')[1];
 
         console.log(oauth_token);
         console.log(user);
