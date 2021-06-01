@@ -48,7 +48,7 @@
         let user = $('#fork-url').val().split('/')[0];
         let repo = $('#fork-url').val().split('/')[1];
 
-        let workflow = "cpp.yml";
+        let workflow = "custom-build.yml";
 
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
         let body = {
