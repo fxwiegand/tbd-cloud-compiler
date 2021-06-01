@@ -52,7 +52,7 @@
 
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
         let body = {
-            "ref": "main",
+            "ref": "cloud-compiler",
             "inputs": {"apps": removed_apps.join('#')}
         };
 
