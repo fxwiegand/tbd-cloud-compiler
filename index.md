@@ -50,12 +50,12 @@ The _tbd-cloud-compiler_ allows users to reduce the size of the <i>ctag-tbd</i> 
         let user = $('#fork-url').val().split('/')[0];
         let repo = $('#fork-url').val().split('/')[1];
 
-        let workflow = "cpp.yml";
+        let workflow = "custom-build.yml";
 
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
         let body = {
-            "ref": "main",
-            "inputs": {"tags": included_apps.join('#')}
+            "ref": "cloud-compiler",
+            "inputs": {"apps": removed_apps.join('#')}
         };
 
         let auth = `token ${oauth_token}`;

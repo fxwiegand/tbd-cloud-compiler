@@ -39,10 +39,12 @@ apps:
 - MISVF
 - Dust
 - MacOsc
+- Subbotnik
 - CDelay
 - DLoop
 - Formantor
 - PolyPad
+- VctrSnt
 - Karpuskl
 - Antique
 theme: jekyll-theme-minimal
