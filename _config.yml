@@ -42,6 +42,7 @@ apps:
 - MacOsc
 - Subbotnik
 - CDelay
+- Talkbox
 - DLoop
 - Formantor
 - PolyPad
