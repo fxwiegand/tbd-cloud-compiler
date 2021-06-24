@@ -12,7 +12,7 @@ for file in os.listdir("ctag-tbd/spiffs_image/data/sp"):
     if file.endswith(".jsn") and file.startswith("mp-"):
         apps.append(file[3:-4])
 
-data["apps"] = apps
+data["apps"] = sorted(apps)
 
 with open("_config.yml", 'w') as outfile:
     yaml.dump(data, outfile, default_flow_style=False, allow_unicode=True)
