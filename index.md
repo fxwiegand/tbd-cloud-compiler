@@ -75,7 +75,8 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
             success: function() {
                 $('#compile-button').removeClass( "btn-primary" );
                 $('#compile-button').addClass( "btn-success" );
-                $('#compile-button').disabled = true;
+                $('#compile-button').text("Compiling Firmware...")
+                $('#compile-button').prop('disabled', true);
                 $('#spinner').show();
                 console.log('success');
             },
