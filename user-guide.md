@@ -11,7 +11,8 @@ Following these steps should guide you through the process of generating your ow
 
 1. If you don't already own a GitHub account go and create one. It is fully free and should be fairly easy.
 2. [Create a fork](https://docs.github.com/en/github/getting-started-with-github/quickstart/fork-a-repo) of the [_ctag-tbd_ repository](https://github.com/ctag-fh-kiel/ctag-tbd) by clicking on the corresponding button on the top right.
-3. [Generate an OAuth-Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for your account that will allow you to trigger workflows for your repositories.
-4. Open the [_tbd-cloud-compiler_](https://fxwiegand.github.io/tbd-cloud-compiler/) and select the apps you want to include in your firmware, enter the url of your _ctag-tbd_ fork and the OAuth token.
-5. Click on compile firmware and download it once it's ready.
-6. Flash the firmware to your _ctag-tbd_ and enjoy your newly acquired memory for samples. Make sure to flash the firmware via USB using the [ESP Tool](https://github.com/espressif/esptool). This is necessary because bootloader and the overall memory partition also need to be updated which is not possible via the web uui. 
+3. Make sure GitHub Actions are activated for your fork by going to the corresponding tab at your fork and clicking on the green button.
+4. [Generate an OAuth-Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for your account that will allow you to trigger workflows for your repositories.
+5. Open the [_tbd-cloud-compiler_](https://fxwiegand.github.io/tbd-cloud-compiler/) and select the apps you want to include in your firmware, enter the url of your _ctag-tbd_ fork and the OAuth token.
+6. Click on compile firmware and download it once it's ready.
+7. Flash the firmware to your _ctag-tbd_ and enjoy your newly acquired memory for samples. Make sure to flash the firmware via USB using the [ESP Tool](https://github.com/espressif/esptool). This is necessary because bootloader and the overall memory partition also need to be updated which is not possible via the web uui. 
