@@ -32,7 +32,10 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         <div id="oauth-help" class="form-text">This token will be needed to trigger the GitHub Action in your fork to build the firmware. Generating such a token is described in the <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub docs</a>.</div>
     </div>
 </form>
-<button onclick="trigger_workflow()" class="btn btn-primary">Compile Firmware</button>
+<button id="compile-button" onclick="trigger_workflow()" class="btn btn-primary">
+  <span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none"></span>
+  Compile Firmware
+</button>
 
 <script>
     function trigger_workflow() {
@@ -70,9 +73,15 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
             headers: header,
             data: JSON.stringify(body),
             success: function() {
+                $('#compile-button').removeClass( "btn-primary" );
+                $('#compile-button').addClass( "btn-success" );
+                $('#compile-button').disabled = true;
+                $('#spinner').style.display = "block";
                 console.log('success');
             },
             error: function() {
+                $('#compile-button').removeClass( "btn-primary" );
+                $('#compile-button').addClass( "btn-danger" );
                 console.log('error');
             }
         });
