@@ -70,6 +70,8 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         };
   
         let help = `Your new ctag-tbd firmware will now be compiled. This will take a few minutes. You can download the firmware as an artifact from the latest run at the <a href="https://github.com/${user}/${repo}/actions" target="_blank">GitHub Actions section of your ctag-tbd fork</a>.`;
+  
+        let error_help = `Ooops, something went wrong. Please make sure that your Fork and OAuth token are valid and take a look at the <a href="user-guide">user guide</a> to check if you did everything right. If you tried everything feel free to <a href="https://github.com/fxwiegand/tbd-cloud-compiler/issues/new/choose" target="_blank">open an issue</a> over at GitHub.`;
 
         $.ajax({
             type: "POST",
@@ -88,6 +90,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
             error: function() {
                 $('#compile-button').removeClass( "btn-primary" );
                 $('#compile-button').addClass( "btn-danger" );
+                $('#button-help').append(error_help);
                 console.log('error');
             }
         });
