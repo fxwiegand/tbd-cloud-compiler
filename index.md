@@ -32,10 +32,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         <div id="oauth-help" class="form-text">This token will be needed to trigger the GitHub Action in your fork to build the firmware. Generating such a token is described in the <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub docs</a>.</div>
     </div>
 </form>
-<button id="compile-button" onclick="trigger_workflow()" class="btn btn-primary" aria-describedby="button-help">
-  <span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none"></span>
-  Compile Firmware
-</button>
+<button id="compile-button" onclick="trigger_workflow()" class="btn btn-primary" aria-describedby="button-help">Compile Firmware</button>
 <div id="button-help" class="form-text"></div>
 
 
@@ -73,6 +70,8 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
   
         let error_help = `<div id="error_help">Ooops, something went wrong! Please make sure that your Fork and OAuth token are both valid. You can also take a look at the <a href="user-guide">user guide</a> to check if you did everything right. If you tried everything and still face a problem please feel free to <a href="https://github.com/fxwiegand/tbd-cloud-compiler/issues/new/choose" target="_blank">open an issue</a> over at GitHub.</div>`;
 
+        let button_success_content = `<span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none"></span>Compiling Firmware...`;
+  
         $.ajax({
             type: "POST",
             url: url,
@@ -82,7 +81,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
                 $('#compile-button').removeClass( "btn-primary" );
                 $('#compile-button').removeClass( "btn-danger" );
                 $('#compile-button').addClass( "btn-success" );
-                $('#compile-button').text("Compiling Firmware...");
+                $('#compile-button').html(button_success_content);
                 $('#button-help').append(help);
                 $('#spinner').show();
                 $('#error_help').hide();
