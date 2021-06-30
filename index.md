@@ -76,7 +76,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
                 $('#compile-button').removeClass( "btn-primary" );
                 $('#compile-button').addClass( "btn-success" );
                 $('#compile-button').disabled = true;
-                $('#spinner').style.display = "block";
+                $('#spinner').show();
                 console.log('success');
             },
             error: function() {
