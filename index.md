@@ -70,7 +70,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
   
         let error_help = `<div id="error_help">Ooops, something went wrong! Please make sure that your Fork and OAuth token are both valid. You can also take a look at the <a href="user-guide">user guide</a> to check if you did everything right. If you tried everything and still face a problem please feel free to <a href="https://github.com/fxwiegand/tbd-cloud-compiler/issues/new/choose" target="_blank">open an issue</a> over at GitHub.</div>`;
 
-        let button_success_content = `<span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none"></span>Compiling Firmware...`;
+        let button_success_content = `<span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none"></span> Compiling Firmware...`;
   
         $.ajax({
             type: "POST",
