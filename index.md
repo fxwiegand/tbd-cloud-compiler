@@ -71,7 +71,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
   
         let help = `Your new ctag-tbd firmware will now be compiled. This will take a few minutes. You can download the firmware as an artifact from the latest run at the <a href="https://github.com/${user}/${repo}/actions" target="_blank">GitHub Actions section of your ctag-tbd fork</a>.`;
   
-        let error_help = `Ooops, something went wrong! Please make sure that your Fork and OAuth token are both valid. You can also take a look at the <a href="user-guide">user guide</a> to check if you did everything right. If you tried everything and still face a problem please feel free to <a href="https://github.com/fxwiegand/tbd-cloud-compiler/issues/new/choose" target="_blank">open an issue</a> over at GitHub.`;
+        let error_help = `<div id="error_help">Ooops, something went wrong! Please make sure that your Fork and OAuth token are both valid. You can also take a look at the <a href="user-guide">user guide</a> to check if you did everything right. If you tried everything and still face a problem please feel free to <a href="https://github.com/fxwiegand/tbd-cloud-compiler/issues/new/choose" target="_blank">open an issue</a> over at GitHub.</div>`;
 
         $.ajax({
             type: "POST",
@@ -80,10 +80,12 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
             data: JSON.stringify(body),
             success: function() {
                 $('#compile-button').removeClass( "btn-primary" );
+                $('#compile-button').removeClass( "btn-danger" );
                 $('#compile-button').addClass( "btn-success" );
                 $('#compile-button').text("Compiling Firmware...");
                 $('#button-help').append(help);
                 $('#spinner').show();
+                $('#error_help').hide();
                 $('#compile-button').prop('disabled', true);
                 console.log('success');
             },
