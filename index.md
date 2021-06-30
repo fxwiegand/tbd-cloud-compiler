@@ -32,10 +32,11 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         <div id="oauth-help" class="form-text">This token will be needed to trigger the GitHub Action in your fork to build the firmware. Generating such a token is described in the <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub docs</a>.</div>
     </div>
 </form>
-<button id="compile-button" onclick="trigger_workflow()" class="btn btn-primary">
+<button id="compile-button" onclick="trigger_workflow()" class="btn btn-primary" aria-describedby="button-help">
   <span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none"></span>
   Compile Firmware
 </button>
+<div id="button-help" class="form-text"></div>
 
 <script>
     function trigger_workflow() {
@@ -66,6 +67,8 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         let header = {
             "Authorization": auth,
         };
+  
+        let help = `Your new ctag-tbd firmware will now be compiled. This will take a few minutes. You can download the firmware as an artifact from the latest run at the <a href="https://github.com/${user}/${repo}/actions" target="_blank">GitHub Actions section of your ctag-tbd fork</a>.`;
 
         $.ajax({
             type: "POST",
@@ -75,9 +78,10 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
             success: function() {
                 $('#compile-button').removeClass( "btn-primary" );
                 $('#compile-button').addClass( "btn-success" );
-                $('#compile-button').text("Compiling Firmware...")
-                $('#compile-button').prop('disabled', true);
+                $('#compile-button').text("Compiling Firmware...");
+                $('#button-help').text(help);
                 $('#spinner').show();
+                $('#compile-button').prop('disabled', true);
                 console.log('success');
             },
             error: function() {
