@@ -36,6 +36,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
   <span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none"></span>
   Compile Firmware
 </button>
+<div id="button-help" class="form-text"></div>
 
 
 <script>
@@ -68,7 +69,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
             "Authorization": auth,
         };
   
-        let help = `<div id="button-help" class="form-text">Your new ctag-tbd firmware will now be compiled. This will take a few minutes. You can download the firmware as an artifact from the latest run at the <a href="https://github.com/${user}/${repo}/actions" target="_blank">GitHub Actions section of your ctag-tbd fork</a>.</div>`;
+        let help = `Your new ctag-tbd firmware will now be compiled. This will take a few minutes. You can download the firmware as an artifact from the latest run at the <a href="https://github.com/${user}/${repo}/actions" target="_blank">GitHub Actions section of your ctag-tbd fork</a>.`;
 
         $.ajax({
             type: "POST",
@@ -79,7 +80,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
                 $('#compile-button').removeClass( "btn-primary" );
                 $('#compile-button').addClass( "btn-success" );
                 $('#compile-button').text("Compiling Firmware...");
-                $('#compile-button').append(help);
+                $('#button-help').append(help);
                 $('#spinner').show();
                 $('#compile-button').prop('disabled', true);
                 console.log('success');
