@@ -56,10 +56,8 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
             }
         });
         
-        let add_cheap_deps = false;
-        if ($("#add-cheap-deps").is(":checked")) {
-            add_cheap_deps = true;
-        }
+        let add_cheap_deps = $("#add-cheap-deps").is(":checked");
+        console.log($("#add-cheap-deps").is(":checked"));
        
         let oauth_token = $('#oauth-token').val();
         let user = $('#fork-url').val().split('/')[0];
