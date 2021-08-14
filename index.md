@@ -31,6 +31,12 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         <input type="text" class="form-control" id="oauth-token" aria-describedby="oauth-help">
         <div id="oauth-help" class="form-text">This token will be needed to trigger the GitHub Action in your fork to build the firmware. Generating such a token is described in the <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub docs</a>.</div>
     </div>
+    <div class="mb-3">
+        <div class="form-check form-switch-xl">
+          <input class="form-check-input" type="checkbox" id="add-cheap-deps">
+          <label class="form-check-label" for="add-cheap-deps">Add apps that share the same dependencies as the ones seleceted.</label>
+        </div>
+    </div>
 </form>
 <button id="compile-button" onclick="trigger_workflow()" class="btn btn-primary" aria-describedby="button-help">Compile Firmware</button>
 <div id="button-help" class="form-text"></div>
@@ -48,6 +54,12 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
                 removed_apps.push(this.id);
             }
         });
+        
+        let add_cheap_deps = false;
+        if ($("add-cheap-deps").is(":checked")) {
+            add_cheap_deps = true;
+        }
+       
         let oauth_token = $('#oauth-token').val();
         let user = $('#fork-url').val().split('/')[0];
         let repo = $('#fork-url').val().split('/')[1];
@@ -57,7 +69,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
         let body = {
             "ref": "cloud-compiler",
-            "inputs": {"apps": removed_apps.join('#')}
+            "inputs": {"apps": removed_apps.join('#'), "deps": add_cheap_deps}
         };
 
         let auth = `token ${oauth_token}`;
