@@ -34,7 +34,8 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
     <div class="mb-3">
         <div class="form-check form-switch-xl">
           <input class="form-check-input" type="checkbox" id="add-cheap-deps">
-          <label class="form-check-label" for="add-cheap-deps">Add apps that share the same dependencies as the ones seleceted.</label>
+          <label class="form-check-label" for="add-cheap-deps">Automatically add apps with shared dependencies.</label>
+          <div id="dep-help" class="form-text">If you choose to check this option, the tbd-cloud-compiler will check if any apps share the same (or a subset of the ) dependencies that are already used by the given apps and will add them automatically to your build.</div>
         </div>
     </div>
 </form>
@@ -69,7 +70,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
         let body = {
             "ref": "cloud-compiler",
-            "inputs": {"apps": removed_apps.join('#'), "deps": add_cheap_deps}
+            "inputs": {"apps": removed_apps.join('#'), "deps": add_cheap_deps.toString()}
         };
 
         let auth = `token ${oauth_token}`;
