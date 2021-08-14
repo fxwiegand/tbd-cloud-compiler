@@ -57,7 +57,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         });
         
         let add_cheap_deps = false;
-        if ($("add-cheap-deps").is(":checked")) {
+        if ($("#add-cheap-deps").is(":checked")) {
             add_cheap_deps = true;
         }
        
