@@ -66,8 +66,6 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         
         let add_cheap_deps = $("#add-cheap-deps").is(":checked");
         let platform = $("#platform").find(":selected").val();
-        console.log(platform);
-        console.log($("#platform").value);
        
         let oauth_token = $('#oauth-token').val();
         let user = $('#fork-url').val().split('/')[0];
@@ -78,7 +76,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
         let body = {
             "ref": "cloud-compiler",
-            "inputs": {"apps": removed_apps.join('#'), "deps": add_cheap_deps.toString()}
+            "inputs": {"apps": removed_apps.join('#'), "deps": add_cheap_deps.toString(), "platform": platform}
         };
 
         let auth = `token ${oauth_token}`;
