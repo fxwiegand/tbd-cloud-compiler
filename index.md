@@ -15,7 +15,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
     {% for app in site.apps %}
     <div class="col-4 mt-1">
         <div class="form-check form-switch">
-          <input class="form-check-input app-checkbox {% if app == "Void" %}checked{% endif %}" type="checkbox" id="{{ app }}">
+          <input class="form-check-input app-checkbox" type="checkbox" id="{{ app }}" {% if app == "Void" %}checked{% endif %}>
           <label class="form-check-label" for="{{ app }}">{{ app }}</label>
         </div>
     </div>
