@@ -39,12 +39,12 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         </div>
     </div>
   <div class="mb-3">
+    <label class="form-check-label" for="platform">Choose the platform for your firmware.</label>
     <select class="form-select" aria-label="select" id="platform">
       <option value="v2" selected>Regular tbd</option>
       <option value="aem">AEM</option>
       <option value="mk2">tbd mk2</option>
     </select>
-    <label class="form-check-label" for="platform">Choose the platform for your firmware.</label>
   </div>
 </form>
 <button id="compile-button" onclick="trigger_workflow()" class="btn btn-primary" aria-describedby="button-help">Compile Firmware</button>
@@ -65,7 +65,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         });
         
         let add_cheap_deps = $("#add-cheap-deps").is(":checked");
-        let platform = $(#plattform).find(":selected").val();
+        let platform = $(#platform).find(":selected").val();
         console.log(platform);
         console.log($("#platform").value);
        
