@@ -4,7 +4,7 @@
 The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd</i> firmware, therefore making up more free space for their beloved samples, by removing one or multiple individual apps that they don't want to use with their module. For more information take a look at the <a href="user-guide">user guide</a>.
 </p>
 
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-danger" role="alert">
   Note that the tbd-cloud-compiler is still under construction and not fully tested! 
 </div>
 
