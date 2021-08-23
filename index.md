@@ -76,7 +76,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
 
         let url = `https://api.github.com/repos/${user}/${repo}/actions/workflows/${workflow}/dispatches`;
         let body = {
-            "ref": "cloud-compiler",
+            "ref": "master",
             "inputs": {"apps": removed_apps.join('#'), "deps": add_cheap_deps.toString(), "platform": platform}
         };
 
