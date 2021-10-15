@@ -5,7 +5,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
 </p>
 
 <div class="alert alert-danger" role="alert">
-  Note that the tbd-cloud-compiler is still under construction and not fully tested! 
+  Note that the tbd-cloud-compiler is fairly new and not fully tested! 
 </div>
 
 <h1>Apps</h1>
