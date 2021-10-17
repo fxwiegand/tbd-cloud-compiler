@@ -5,7 +5,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
 </p>
 
 <div class="alert alert-danger" role="alert">
-  Note that the tbd-cloud-compiler is fairly new and not fully tested! 
+  Note that the tbd-cloud-compiler is fairly new and not fully tested yet! 
 </div>
 
 <h1>Apps</h1>
@@ -35,7 +35,7 @@ The <i>tbd-cloud-compiler</i> allows users to reduce the size of the <i>ctag-tbd
         <div class="form-check form-switch-xl">
           <input class="form-check-input" type="checkbox" id="add-cheap-deps">
           <label class="form-check-label" for="add-cheap-deps">Automatically add apps with shared dependencies.</label>
-          <div id="dep-help" class="form-text">If you choose to check this option, the tbd-cloud-compiler will check if any apps share the same (or a subset of the ) dependencies that are already used by the given apps and will add them automatically to your build.</div>
+          <div id="dep-help" class="form-text">If you choose to check this option, the tbd-cloud-compiler will check if any apps share the same (or a subset of the) dependencies that are already used by the given apps and will add them automatically to your build.</div>
         </div>
     </div>
   <div class="mb-3">
