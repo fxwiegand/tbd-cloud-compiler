@@ -33,6 +33,7 @@ apps:
 - MoogFilt
 - PNoise
 - PolyPad
+- RecNPlay
 - Retroactor
 - Rompler
 - SimpleVCA
